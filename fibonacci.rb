@@ -10,6 +10,7 @@ class Fibonacci
       counter = 0
 
       until counter == num
+        print "#{a} "
         temp = a
         a = b
         b = temp + b
