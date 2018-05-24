@@ -7,19 +7,12 @@ class Fibonacci
       return "😑 Fibonacci numbers must be integers--try again!"
     elsif num < 0
       return "🤷 The Fibonacci series starts at 0--try again!"
+    elsif Cache::FIBONACCI[num]
+      return Cache::FIBONACCI[num]
+    elsif num <= 1
+      return num
     else
-      a = 0
-      b = 1
-      counter = 0
-
-      until counter == num
-        print "#{a} "
-        temp = a
-        a = b
-        b = temp + b
-        counter += 1
-      end
-      return a
+      Cache::FIBONACCI[num] ||= calculate(num-1) + calculate(num-2)
     end
   end
 end
