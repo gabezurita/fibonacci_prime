@@ -1,0 +1,8 @@
+<form action="/" method="get">
+  Enter a number here:
+  <input type="number" name="n" required="true">
+</form>
+
+<% if params[:n] %>
+  <%= @result %>
+<% end %>
