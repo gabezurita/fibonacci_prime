@@ -1,20 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Fibonacci, type: :model do
-  context "when given invalid numbers" do
-    it "outputs an error message for negative integers" do
-      expect(Fibonacci.calculate(-1.5)).to eql("😑 Fibonacci numbers must be integers--try again!")
-    end
-
-    it "outputs an error message for negative integers" do
-      expect(Fibonacci.calculate(1.5)).to eql("😑 Fibonacci numbers must be integers--try again!")
-    end
-
-    it "outputs an error message for non-integers" do
-      expect(Fibonacci.calculate(-1)).to eql("🤷 The Fibonacci series starts at 0--try again!")
-    end
-  end
-
   context "when given valid numbers" do
     it "outputs the fibonacci number for 0" do
       expect(Fibonacci.calculate(0)).to eql(0)
