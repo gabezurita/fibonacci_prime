@@ -1,5 +1,8 @@
 class Fibonacci
   def self.calculate(num)
+    return "🙏 Please enter a valid number" if num == ""
+    num = num.to_i
+
     if !(num.is_a? Integer)
       return "😑 Fibonacci numbers must be integers--try again!"
     elsif num < 0
