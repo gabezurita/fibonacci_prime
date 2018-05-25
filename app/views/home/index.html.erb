@@ -1,14 +1,16 @@
 <form action="/" method="get">
-  Enter a number here:
+  Let's calculate some Fibonacci and Prime Numbers!
+  <br><br>
+  Enter a number below:
   <input type="number" name="n" required="true" min="0" step="1">
 </form>
 
 <% if params[:n] %>
-  Fibonacci Numbers: <%= @fibonacci_result %>
-  <br>
-  Prime Numbers: <%= @prime_numbers_result.join(" ") %>
+  <br><br>
+  Fibonacci Number: <%= @fibonacci_result %>
+  <br><br>
+  First <%= @num %> Fibonacci Numbers:
+  <%= @first_n_fibonacci_numbers %>
+  <br><br>
+  First <%= @num %> Prime Numbers: <%= @prime_numbers_result %>
 <% end %>
-
-<br>
-<br>
-<%= Cache::FIBONACCI %>

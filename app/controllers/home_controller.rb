@@ -1,6 +1,11 @@
 class HomeController < ApplicationController
   def index
-    @fibonacci_result = Fibonacci.calculate(params[:n])
-    @prime_numbers_result = PrimeNumbers.output_first(params[:n])
+    @num = params[:n].to_i
+
+    @prime_numbers_result = PrimeNumbers.output_first(@num).join(' ')
+
+    Thread.new { @fibonacci_result = Fibonacci.calculate(@num) }
+
+    @first_n_fibonacci_numbers = Cache::FIBONACCI.sort_by { |k,v| k }.first(@num).to_h.values.join(' ')
   end
 end
