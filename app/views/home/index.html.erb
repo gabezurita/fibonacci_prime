@@ -4,8 +4,11 @@
 </form>
 
 <% if params[:n] %>
-  <%= @result %>
+  Fibonacci Numbers: <%= @fibonacci_result %>
+  <br>
+  Prime Numbers: <%= @prime_numbers_result.join(" ") %>
 <% end %>
 
-<br><br>
+<br>
+<br>
 <%= Cache::FIBONACCI %>
