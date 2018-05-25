@@ -1,16 +1,32 @@
-<form action="/" method="get">
-  Let's calculate some Fibonacci and Prime Numbers!
-  <br><br>
-  Enter a number below:
-  <input type="number" name="n" required="true" min="0" step="1">
-</form>
+<div class="row">
+  <div class="col s12">
+    <div class="card">
+      <div class="card-image">
+        <%= image_tag("fibonacci.png", :alt => "rss feed") %>
+        <span class="card-title short">Primonacci</span>
+      </div>
+      <div class="card-content">
 
-<% if params[:n] %>
-  <br><br>
-  Fibonacci Number: <%= @fibonacci_result %>
-  <br><br>
-  First <%= @num %> Fibonacci Numbers:
-  <%= @first_n_fibonacci_numbers %>
-  <br><br>
-  First <%= @num %> Prime Numbers: <%= @prime_numbers_result %>
-<% end %>
+        <form action="/" method="get">
+          <h3 class="center">Let's calculate some Fibonacci and Prime Numbers!</h3>
+          <br><br>
+          <h4>Enter a number below:</h4>
+          <input type="number" name="n" required="true" min="0" step="1">
+          <div class="btn waves-effect waves-light" id="fibClick"><%= submit_tag("Submit") %></div>
+        </form>
+
+        <% if params[:n] %>
+          <br><br>
+          <h5 class="fibresults">The Fibonacci Number of <%= @num %> is:</h5>
+          <%= @fibonacci_result %>
+          <br><br>
+          <h5>First <%= @num %> Fibonacci Numbers:</h5>
+          <%= @first_n_fibonacci_numbers %>
+          <br><br>
+          <h5>First <%= @num %> Prime Numbers:</h5>
+          <%= @prime_numbers_result %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
