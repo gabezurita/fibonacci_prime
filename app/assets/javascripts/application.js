@@ -13,3 +13,11 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+//= require materialize
+
+window.onload=toBottom;
+
+function toBottom()
+{
+window.scrollTo(0, document.body.scrollHeight);
+}
