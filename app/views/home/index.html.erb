@@ -12,7 +12,9 @@
           <br><br>
           <h4>Enter a number below:</h4>
           <input type="number" name="n" required="true" min="0" step="1">
-          <div class="btn waves-effect waves-light" id="fibClick"><%= submit_tag("Submit") %></div>
+          <button class="btn waves-effect waves-light" type="submit" name="action" id="fibClick">Submit
+            <i class="material-icons right">send</i>
+          </button>
         </form>
 
         <% if params[:n] %>
