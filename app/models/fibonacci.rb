@@ -5,11 +5,15 @@ class Fibonacci
     num = num.to_i
 
     if Cache::FIBONACCI[num]
-      return Cache::FIBONACCI[num]
+      Cache::FIBONACCI[num]
     elsif num == 0 || num == 1
       Cache::FIBONACCI[num] ||= num
     else
       Cache::FIBONACCI[num] ||= calculate(num-1) + calculate(num-2)
     end
+  end
+
+  def self.output_first(num)
+    Cache::FIBONACCI.sort_by { |k,v| k }.first(num).to_h.values.join(' ')
   end
 end
